@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>Manual do Relógio LED</title>
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -15,58 +17,70 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
+      background-color: #000000;
       color: #222;
       line-height: 1.6;
     }
 
     .container {
-      max-width: 850px;
-      margin: auto;
-      padding: 30px 20px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
     }
+
+    /* LOGO */
 
     header {
       text-align: center;
-      padding: 35px 0 45px;
+      padding: 30px 0 40px;
     }
 
     .logo {
-      max-width: 220px;
-      width: 70%;
+      display: block;
+      width: 100%;
+      max-width: 550px;
       height: auto;
-      margin-bottom: 25px;
+      margin: 0 auto;
     }
 
-    h1 {
+    /* QUADRO BRANCO */
+
+    .manual {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 45px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .manual h1 {
+      text-align: center;
       font-size: 30px;
-      font-weight: 600;
       margin-bottom: 8px;
     }
 
-    .subtitulo {
+    .linha-vermelha {
+      width: 70px;
+      height: 3px;
+      background-color: #e60000;
+      margin: 0 auto 15px;
+    }
+
+    .introducao {
+      text-align: center;
       color: #666;
+      margin-bottom: 30px;
       font-size: 16px;
     }
 
-    .manual {
-      background: white;
-      border-radius: 12px;
-      padding: 35px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    }
-
-    .manual h2 {
-      margin-bottom: 25px;
-      font-size: 24px;
-    }
+    /* PASSOS */
 
     .passo {
-      padding: 22px 0;
-      border-bottom: 1px solid #eee;
+      padding: 25px 0;
+      border-bottom: 1px solid #dddddd;
     }
 
-    .passo:last-child {
+    .passo:last-of-type {
       border-bottom: none;
     }
 
@@ -75,90 +89,128 @@
       align-items: center;
       justify-content: center;
 
-      width: 35px;
-      height: 35px;
+      width: 42px;
+      height: 42px;
 
-      background: #111;
-      color: white;
+      background-color: #000000;
+      color: #ff0000;
 
-      border-radius: 50%;
+      border-radius: 7px;
+
+      font-size: 20px;
       font-weight: bold;
-      margin-right: 10px;
+
+      margin-right: 12px;
     }
 
-    .passo h3 {
+    .passo h2 {
       display: inline;
       font-size: 19px;
     }
 
     .passo p {
       margin-top: 12px;
-      color: #555;
+      margin-left: 59px;
+      color: #555555;
     }
 
+    /* AVISO */
+
     .aviso {
-      margin-top: 25px;
-      padding: 18px;
-      background: #f8f8f8;
-      border-left: 4px solid #222;
-      border-radius: 5px;
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f3f3f3;
+      border-left: 4px solid #e60000;
+      border-radius: 7px;
     }
+
+    .aviso strong {
+      color: #111111;
+    }
+
+    /* RODAPÉ */
 
     footer {
       text-align: center;
-      padding: 40px 0 20px;
-      color: #888;
+      color: #888888;
+      padding: 35px 0 15px;
       font-size: 14px;
     }
+
+    /* AJUSTES PARA CELULAR */
 
     @media (max-width: 600px) {
 
       .container {
-        padding: 20px 15px;
+        padding: 12px;
       }
 
       header {
-        padding-top: 20px;
+        padding: 25px 0 30px;
+      }
+
+      .logo {
+        max-width: 400px;
       }
 
       .manual {
-        padding: 25px 20px;
+        padding: 30px 20px;
+        border-radius: 12px;
       }
 
-      h1 {
-        font-size: 26px;
+      .manual h1 {
+        font-size: 24px;
+      }
+
+      .introducao {
+        font-size: 15px;
+      }
+
+      .passo h2 {
+        font-size: 17px;
+      }
+
+      .passo p {
+        margin-left: 0;
+        margin-top: 15px;
       }
 
     }
+
   </style>
 </head>
+
 
 <body>
 
   <div class="container">
 
+    <!-- LOGO -->
     <header>
-
-      <img src="logo.png" alt="Logo da empresa" class="logo">
-
-      <h1>Manual do Relógio LED</h1>
-
-      <p class="subtitulo">
-        Guia rápido para instalação e configuração do seu relógio.
-      </p>
-
+      <img src="logo.png" alt="Relógio LED" class="logo">
     </header>
 
 
+    <!-- MANUAL -->
     <main class="manual">
 
-      <h2>Configuração inicial</h2>
+      <h1>MANUAL DO RELÓGIO LED</h1>
 
+      <div class="linha-vermelha"></div>
+
+      <p class="introducao">
+        Siga os passos abaixo para conectar seu relógio à rede Wi-Fi
+        e configurar corretamente.
+      </p>
+
+
+      <!-- PASSO 1 -->
 
       <div class="passo">
 
         <span class="numero">1</span>
-        <h3>Ligue o relógio</h3>
+
+        <h2>Ligue o relógio</h2>
 
         <p>
           Conecte o relógio à fonte de alimentação e aguarde alguns segundos
@@ -168,23 +220,29 @@
       </div>
 
 
+      <!-- PASSO 2 -->
+
       <div class="passo">
 
         <span class="numero">2</span>
-        <h3>Abra o Wi-Fi do celular</h3>
+
+        <h2>Abra o Wi-Fi do seu celular</h2>
 
         <p>
-          Acesse as configurações de Wi-Fi do seu celular e procure pela rede
-          criada pelo relógio.
+          Acesse as configurações de Wi-Fi do seu celular e procure pela
+          rede criada pelo relógio.
         </p>
 
       </div>
 
 
+      <!-- PASSO 3 -->
+
       <div class="passo">
 
         <span class="numero">3</span>
-        <h3>Conecte-se ao relógio</h3>
+
+        <h2>Conecte-se ao relógio</h2>
 
         <p>
           Selecione a rede Wi-Fi do relógio e aguarde a conexão.
@@ -193,10 +251,13 @@
       </div>
 
 
+      <!-- PASSO 4 -->
+
       <div class="passo">
 
         <span class="numero">4</span>
-        <h3>Configure sua rede Wi-Fi</h3>
+
+        <h2>Configure sua rede Wi-Fi</h2>
 
         <p>
           Na página de configuração, selecione a rede Wi-Fi da sua casa
@@ -206,38 +267,46 @@
       </div>
 
 
+      <!-- PASSO 5 -->
+
       <div class="passo">
 
         <span class="numero">5</span>
-        <h3>Finalização</h3>
+
+        <h2>Finalização</h2>
 
         <p>
-          Após salvar as configurações, o relógio irá se conectar à sua rede
-          Wi-Fi automaticamente.
+          Após salvar as configurações, o relógio irá se conectar
+          automaticamente à sua rede Wi-Fi.
         </p>
 
       </div>
 
 
+      <!-- AVISO -->
+
       <div class="aviso">
 
-        <strong>Importante:</strong>
+        <strong>IMPORTANTE:</strong>
 
-        Caso o relógio não consiga se conectar ao Wi-Fi,
-        reinicie o equipamento e repita o processo de configuração.
+        <p>
+          Caso o relógio não consiga se conectar ao Wi-Fi,
+          reinicie o equipamento e repita o processo de configuração.
+        </p>
 
       </div>
 
     </main>
 
 
+    <!-- RODAPÉ -->
+
     <footer>
-
-      © 2026 Studio Laser Corte e Gravação • Manual do Relógio LED
-
+      © 2026 Relógio LED • Todos os direitos reservados
     </footer>
 
   </div>
 
 </body>
+
 </html>
