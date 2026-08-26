@@ -1,315 +1,243 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Relógio LED Wi‑Fi | Studio Laser</title>
-  <meta name="description" content="Manual e suporte do Relógio LED Wi‑Fi (Studio Laser). Configuração do Wi‑Fi, botões de cor e brilho, dúvidas e downloads." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Manual do Relógio LED</title>
+
   <style>
-    :root{
-      --bg:#0f1115;
-      --card:#171a21;
-      --text:#e9eef7;
-      --muted:#a9b3c4;
-      --brand:#c62828;
-      --line:rgba(255,255,255,.08);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius:14px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
+
+    body {
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #0f1115 0%, #0b0d11 100%);
-      color:var(--text);
-      line-height:1.55;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
     }
-    a{color:inherit}
-    .container{max-width:1050px;margin:0 auto;padding:0 18px}
 
-    /* Header */
-    header{
-      position:sticky;top:0;z-index:20;
-      background:rgba(15,17,21,.82);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 30px 20px;
     }
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:12px;min-width:0}
-    .brand img{height:44px;width:auto;display:block}
-    .brand .t{min-width:0}
-    .brand .t b{display:block;font-size:16px;letter-spacing:.2px}
-    .brand .t span{display:block;font-size:12px;color:var(--muted)}
-    nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    nav a{
-      text-decoration:none;
-      font-size:13px;
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:10px;
-      border:1px solid transparent;
+
+    header {
+      text-align: center;
+      padding: 35px 0 45px;
     }
-    nav a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.03)}
 
-    /* Hero */
-    .hero{padding:34px 0 18px}
-    .heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch}
-    .heroCard{
-      background: radial-gradient(1200px 600px at 0% 0%, rgba(198,40,40,.22), transparent 55%),
-                  radial-gradient(900px 500px at 100% 0%, rgba(255,255,255,.06), transparent 60%),
-                  var(--card);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:22px;
+    .logo {
+      max-width: 220px;
+      width: 70%;
+      height: auto;
+      margin-bottom: 25px;
     }
-    .heroCard h1{margin:0 0 8px;font-size:28px;line-height:1.2}
-    .heroCard p{margin:0 0 14px;color:var(--muted)}
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .badge{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03)}
 
-    .ctaRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      text-decoration:none;
-      font-weight:700;
-      font-size:14px;
-      background: rgba(255,255,255,.03);
-      color:var(--text);
+    h1 {
+      font-size: 30px;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
-    .btn.primary{background:var(--brand);border-color:rgba(255,255,255,.14)}
-    .btn:hover{filter:brightness(1.05)}
 
-    .quick{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
+    .subtitulo {
+      color: #666;
+      font-size: 16px;
     }
-    .quick h3{margin:0 0 10px}
-    .quick .mini{color:var(--muted);font-size:13px;margin:0 0 12px}
-    .kgrid{display:grid;grid-template-columns:1fr;gap:10px}
-    .k{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(255,255,255,.02)}
-    .k b{display:block;font-size:13px;margin-bottom:4px}
-    .k span{color:var(--muted);font-size:12px}
 
-    /* Sections */
-    section{padding:18px 0}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:18px;
+    .manual {
+      background: white;
+      border-radius: 12px;
+      padding: 35px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
-    .card h2{margin:0 0 10px;font-size:18px}
-    .card p{margin:0 0 10px;color:var(--muted)}
-    .card ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
-    .card li{margin:6px 0}
-    .steps{counter-reset:st}
-    .steps li{list-style:none;margin:10px 0;padding-left:36px;position:relative}
-    .steps li:before{
-      counter-increment:st;
-      content:counter(st);
-      position:absolute;left:0;top:0;
-      width:26px;height:26px;border-radius:999px;
-      background:rgba(198,40,40,.18);
-      border:1px solid rgba(198,40,40,.55);
-      display:flex;align-items:center;justify-content:center;
-      color:var(--text);
-      font-weight:800;
-      font-size:12px;
+
+    .manual h2 {
+      margin-bottom: 25px;
+      font-size: 24px;
     }
-    .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03);color:var(--muted);font-size:12px}
-    code{background:rgba(255,255,255,.06);padding:4px 6px;border-radius:8px;color:var(--text)}
 
-    .divider{height:1px;background:var(--line);margin:12px 0}
+    .passo {
+      padding: 22px 0;
+      border-bottom: 1px solid #eee;
+    }
 
-    /* Footer */
-    footer{padding:26px 0 38px;color:var(--muted);text-align:center}
+    .passo:last-child {
+      border-bottom: none;
+    }
 
-    /* Responsive */
-    @media (max-width: 920px){
-      .heroGrid{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      nav{display:none}
+    .numero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 35px;
+      height: 35px;
+
+      background: #111;
+      color: white;
+
+      border-radius: 50%;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .passo h3 {
+      display: inline;
+      font-size: 19px;
+    }
+
+    .passo p {
+      margin-top: 12px;
+      color: #555;
+    }
+
+    .aviso {
+      margin-top: 25px;
+      padding: 18px;
+      background: #f8f8f8;
+      border-left: 4px solid #222;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        padding: 20px 15px;
+      }
+
+      header {
+        padding-top: 20px;
+      }
+
+      .manual {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="container">
-    <div class="topbar">
-      <div class="brand">
-        <img src="assets/logo.png" alt="Studio Laser" onerror="this.style.display='none'" />
-        <div class="t">
-          <b>Studio Laser</b>
-          <span>Manual e suporte do Relógio LED Wi‑Fi</span>
-        </div>
-      </div>
-      <nav>
-        <a href="#config">Configurar Wi‑Fi</a>
-        <a href="#botoes">Botões</a>
-        <a href="#problemas">Problemas</a>
-        <a href="#downloads">Downloads</a>
-      </nav>
-    </div>
-  </div>
-</header>
-
-<main>
   <div class="container">
 
-    <div class="hero">
-      <div class="heroGrid">
-        <div class="heroCard">
-          <h1>Relógio LED Wi‑Fi</h1>
-          <p>
-            Configure o Wi‑Fi em poucos passos. Depois, o relógio é controlado por botões físicos: <b>cor</b> e <b>brilho</b>.
-            O brilho pode ficar <b>automático (NTP)</b> ou <b>máximo</b>.
-          </p>
+    <header>
 
-          <div class="badges">
-            <div class="badge">Wi‑Fi via portal “StudioLaser‑Relogio”</div>
-            <div class="badge">Hora automática (NTP)</div>
-            <div class="badge">Botões: Cor • Brilho • Reset</div>
-          </div>
+      <img src="logo.png" alt="Logo da empresa" class="logo">
 
-          <div class="ctaRow">
-            <a class="btn primary" href="#config">Começar configuração</a>
-            <a class="btn" href="#downloads">Baixar manual (PDF)</a>
-          </div>
+      <h1>Manual do Relógio LED</h1>
 
-          <div class="divider"></div>
-          <div class="pill">Dica: se você vir a rede do relógio, a configuração ainda não foi concluída.</div>
-        </div>
+      <p class="subtitulo">
+        Guia rápido para instalação e configuração do seu relógio.
+      </p>
 
-        <aside class="quick">
-          <h3>Atalhos rápidos</h3>
-          <p class="mini">Para o usuário final (sem termos técnicos).</p>
-          <div class="kgrid">
-            <div class="k">
-              <b>1) Conectar no relógio</b>
-              <span>No celular, conecte na rede <b>StudioLaser‑Relogio</b>.</span>
-            </div>
-            <div class="k">
-              <b>2) Escolher seu Wi‑Fi</b>
-              <span>Selecione sua rede e digite a senha. Clique em <b>Salvar</b>.</span>
-            </div>
-            <div class="k">
-              <b>3) Controlar por botões</b>
-              <span><b>Cor</b> troca a cor. <b>Brilho</b> alterna Auto/Max.</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </div>
+    </header>
 
-    <section id="config">
-      <div class="grid">
-        <div class="card">
-          <h2>Configuração do Wi‑Fi</h2>
-          <p>Use este passo a passo no celular. É o método mais simples.</p>
-          <ol class="steps">
-            <li>Ligue o relógio na tomada.</li>
-            <li>No celular, abra o Wi‑Fi e conecte na rede <b>StudioLaser‑Relogio</b> (sem senha).</li>
-            <li>O portal abre automaticamente. Se não abrir, use o navegador e tente novamente (o próprio celular costuma abrir).</li>
-            <li>Escolha o seu Wi‑Fi e digite a senha.</li>
-            <li>Clique em <b>Salvar</b>. O relógio reinicia e conecta na sua rede.</li>
-          </ol>
-          <div class="divider"></div>
-          <p><b>Importante:</b> o WiFiManager é branco e mostra a lista de redes. Se você não enxerga as redes, confira o brilho do celular ou atualize a página.</p>
-        </div>
 
-        <div class="card" id="botoes">
-          <h2>Botões do relógio</h2>
-          <p>Após configurar o Wi‑Fi, você não precisa mais acessar nenhuma página.</p>
-          <ul>
-            <li><b>Botão COR</b> (clique curto): troca a cor em sequência (vermelho, branco, azul, verde…)</li>
-            <li><b>Botão BRILHO</b> (clique curto): alterna entre <b>Auto (NTP)</b> e <b>Máximo</b>. O relógio dá um “preview” de brilho para você notar a mudança.</li>
-            <li><b>Botão RESET</b> (segure 5 segundos): apaga a rede Wi‑Fi salva e volta para a configuração.</li>
-          </ul>
-          <div class="divider"></div>
-          <p><b>Auto (NTP):</b> dia = brilho máximo, noite = brilho reduzido (para conforto visual e maior vida útil).</p>
-        </div>
-      </div>
-    </section>
+    <main class="manual">
 
-    <section id="problemas">
-      <div class="grid">
-        <div class="card">
-          <h2>Solução de problemas</h2>
-          <ul>
-            <li><b>Não aparece o portal de configuração:</b> conecte novamente na rede <b>StudioLaser‑Relogio</b> e aguarde alguns segundos.</li>
-            <li><b>Não conecta no Wi‑Fi de casa:</b> verifique a senha e a distância do roteador. Redes 5 GHz não são compatíveis (use 2,4 GHz).</li>
-            <li><b>Hora errada:</b> confirme se o Wi‑Fi tem internet. O relógio precisa acessar servidores NTP.</li>
-            <li><b>Quero trocar de roteador/rede:</b> segure o botão <b>RESET</b> por 5 segundos e refaça a configuração.</li>
-          </ul>
-        </div>
+      <h2>Configuração inicial</h2>
 
-        <div class="card" id="downloads">
-          <h2>Manual e materiais</h2>
-          <p>Baixe o manual em PDF e (opcionalmente) assista ao vídeo.</p>
-          <div class="ctaRow">
-            <a class="btn primary" href="manual-relogio-led-wifi.pdf" download>Baixar manual (PDF)</a>
-            <a class="btn" href="#video">Ver vídeo</a>
-          </div>
-          <div class="divider"></div>
-          <p class="pill">Coloque um QR Code na embalagem apontando para esta página.</p>
-          <p style="margin-top:10px;color:var(--muted);font-size:13px">
-            Arquivos esperados no GitHub Pages:
-            <br>• <code>index.html</code>
-            <br>• <code>manual-relogio-led-wifi.pdf</code>
-            <br>• <code>assets/logo.png</code>
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <section id="video">
-      <div class="card">
-        <h2>Vídeo de configuração</h2>
-        <p>Quando você tiver o link do vídeo (YouTube, por exemplo), substitua o <code>src</code> do iframe abaixo.</p>
-        <div style="position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.02)">
-          <iframe
-            title="Vídeo de configuração"
-            src=""
-            style="position:absolute;inset:0;width:100%;height:100%;border:0"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <p style="margin-top:10px;color:var(--muted);font-size:13px">
-          Exemplo de link embutido: <code>https://www.youtube.com/embed/SEU_ID</code>
-        </p>
-      </div>
-    </section>
+      <div class="passo">
 
-    <section>
-      <div class="card">
-        <h2>Produtos e contato</h2>
+        <span class="numero">1</span>
+        <h3>Ligue o relógio</h3>
+
         <p>
-          Este relógio é um produto do <b>Studio Laser</b>. Você pode usar este site também para divulgar seus produtos finais.
-          Quando você tiver seu domínio, substitua o botão abaixo.
+          Conecte o relógio à fonte de alimentação e aguarde alguns segundos
+          até que o equipamento seja iniciado.
         </p>
-        <div class="ctaRow">
-          <a class="btn" href="https://seusite.com" target="_blank" rel="noreferrer">Ver loja / catálogo</a>
-          <a class="btn" href="#config">Voltar para configuração</a>
-        </div>
+
       </div>
-    </section>
+
+
+      <div class="passo">
+
+        <span class="numero">2</span>
+        <h3>Abra o Wi-Fi do celular</h3>
+
+        <p>
+          Acesse as configurações de Wi-Fi do seu celular e procure pela rede
+          criada pelo relógio.
+        </p>
+
+      </div>
+
+
+      <div class="passo">
+
+        <span class="numero">3</span>
+        <h3>Conecte-se ao relógio</h3>
+
+        <p>
+          Selecione a rede Wi-Fi do relógio e aguarde a conexão.
+        </p>
+
+      </div>
+
+
+      <div class="passo">
+
+        <span class="numero">4</span>
+        <h3>Configure sua rede Wi-Fi</h3>
+
+        <p>
+          Na página de configuração, selecione a rede Wi-Fi da sua casa
+          ou empresa e informe a senha.
+        </p>
+
+      </div>
+
+
+      <div class="passo">
+
+        <span class="numero">5</span>
+        <h3>Finalização</h3>
+
+        <p>
+          Após salvar as configurações, o relógio irá se conectar à sua rede
+          Wi-Fi automaticamente.
+        </p>
+
+      </div>
+
+
+      <div class="aviso">
+
+        <strong>Importante:</strong>
+
+        Caso o relógio não consiga se conectar ao Wi-Fi,
+        reinicie o equipamento e repita o processo de configuração.
+
+      </div>
+
+    </main>
+
 
     <footer>
-      © 2026 — Studio Laser • Relógio LED Wi‑Fi
+
+      © 2026 Sua Empresa • Manual do Relógio LED
+
     </footer>
 
   </div>
-</main>
 
 </body>
 </html>
